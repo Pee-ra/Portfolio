@@ -46,12 +46,12 @@ export const site = {
       cover: "/cover/noteapp.jpg"
     },
     {
-      title: "Experience Archive (In Progress)",
-      description: "Immersive web experience featuring 3D visuals and interactive transitions built with Three.js and React, inspired by David Whyte’s Experience site.",
-      tech: ["React", "Three.js", "React Three Fiber", "TailwindCSS", "Node.js"],
+      title: "Interactive 3D Storytelling Web Experience (WebGL) (In Progress)",
+      description: "A scroll-driven 3D experience with real-time camera/scene animation and interaction-synced audio, inspired by David Whyte’s Experience site.",
+      tech: ["Next.js", "Three.js", "React Three Fiber", "GSAP/ScrollTrigger", "@react-three/fiber", "WebGL"],
       live: "https://your-experience-project.vercel.app",
       github: "https://github.com/yourname/experience-archive",
-      cover: "/covers/experience.png"
+      cover: "/cover/Melody.png"
     }
     
     
@@ -60,18 +60,14 @@ export const site = {
   experience: [
     {
       date: "June 2025- September 2025",
-      title: "Full-Stack Web Development Bootcamp Graduate",
+      title: "Full-Stack Web Development Bootcamp Graduate from - Generation Thailand",
       detail: "Completed MERN Stack training with strong soft skills in teamwork and problem-solving. Experienced in building databases (MongoDB), developing RESTful APIs (Express/Node.js), and creating responsive frontends with React. Collaborated in Agile team projects simulating real-world development."
     },
     {
-      date: "2023-2024",
-      title: "Freelance Web Developer",
-      detail: "Built responsive websites and web applications for small businesses, focusing on user experience and performance optimization."
+      date: "November 2024 - May 2025",
+      title: "Quality Assurance Associate -Innovative Food and Beverage Co., Ltd.",
+      detail: "Conducted on-site quality inspections and coordinated testing to ensure product standards. Collaborated with cross-company teams, making real-time decisions and demonstrating strong communication and problem-solving skills."
     },
-    {
-      date: "2023",
-      title: "Career Transition to Tech",
-      detail: "Started self-learning programming through online courses, building personal projects, and participating in coding challenges."
-    }
+
   ]
 }
