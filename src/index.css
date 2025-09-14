@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------- Base Reset ---------------- */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ---------------- Components ---------------- */
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-primary {
+    @apply glass rounded-lg px-6 py-3 text-white transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply glass rounded-lg px-6 py-3 border border-white/30 text-white;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* ---------------- Animations ---------------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ---------------- THEMES ---------------- */
+
+/* 1) 🌌 Aurora Borealis */
+.theme-aurora {
+  background: linear-gradient(135deg, #0b1020 0%, #1a2b5a 35%, #3f5bd8 60%, #7dd3fc 100%);
+}
+.theme-aurora .btn-primary {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+}
+
+/* 2) 🌊 Ocean Mist */
+.theme-ocean {
+  background: linear-gradient(135deg, #081926 0%, #0d2b3a 40%, #105b6e 70%, #4cc9f0 100%);
+}
+.theme-ocean .btn-primary {
+  background: rgba(34, 211, 238, 0.8);
+}
+
+/* 3) 🌃 Midnight Neon */
+.theme-neon {
+  background: linear-gradient(135deg, #0b0b12 0%, #111422 60%, #141a2f 100%);
+}
+.theme-neon .btn-primary {
+  background: linear-gradient(90deg, #22d3ee, #a78bfa);
+  color: #0b0b12;
+}
+
+/* 4) 🏜️ Desert Sunset */
+.theme-desert {
+  background: linear-gradient(135deg, #26131d 0%, #532243 35%, #b5485d 65%, #ff9e6e 100%);
+}
+.theme-desert .btn-primary {
+  background: rgba(251, 146, 60, 0.9);
+}
+
+/* 5) 🌸 Sakura Frost */
+.theme-sakura {
+  background: linear-gradient(135deg, #fdf2f8 0%, #fde2e9 45%, #e9d5ff 100%);
+}
+.theme-sakura .btn-primary {
+  background: rgba(255, 255, 255, 0.7);
+  color: #831843;
+}
+
+/* 6) 🪨 Slate Minimal */
+.theme-slate {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #334155 100%);
+}
+.theme-slate .btn-primary {
+  background: rgba(14, 165, 233, 0.9);
+}
+
+
+/* Aurora gradient background */
+.aurora-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(16,185,129,0.3), transparent 60%),
+              radial-gradient(circle at 80% 40%, rgba(34,197,94,0.3), transparent 60%),
+              radial-gradient(circle at 40% 80%, rgba(132,204,22,0.3), transparent 60%);
+  background-size: 200% 200%;
+  animation: aurora 12s ease-in-out infinite alternate;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+    filter: blur(50px) hue-rotate(0deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: blur(70px) hue-rotate(20deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: blur(50px) hue-rotate(0deg);
+  }
+}
+
+.aurora-glass {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08); /* โปร่งใส */
+  border-radius: 1rem;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+/* Aurora glow effect */
+.aurora-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 255, 200, 0.25),
+    rgba(120, 180, 255, 0.25),
+    rgba(200, 120, 255, 0.25),
+    rgba(0, 200, 255, 0.25)
+  );
+  background-size: 300% 300%;
+  animation: auroraShift 12s ease-in-out infinite;
+  z-index: 0;
+}
+
+.aurora-glass > * {
+  position: relative;
+  z-index: 1; /* ✅ content (รวมถึง <img>) อยู่บน */
+}
+@keyframes auroraShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
